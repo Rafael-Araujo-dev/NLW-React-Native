@@ -27,10 +27,10 @@ const Title = styled.Text`
 `
 
 const SubTitle = styled.Text`
-        color: #DDE3F0;
-        font-size: 15px;
-        text-align: center;
-        margin-bottom: 64px;
+    color: #DDE3F0;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 64px;
 `
 
 const Image = styled.Image`

@@ -1,15 +1,39 @@
 import React from 'react'
-import { 
-    View, 
-    Text, 
-    Image,
-    TouchableOpacity,
-    TouchableOpacityProps
-} from 'react-native'
+import { TouchableOpacityProps } from 'react-native'
 
 import DiscordImg from '../../assets/discord.png'
 
-import styles from './styles'
+import styled from 'styled-components/native'
+
+const TouchableOpacityContainer = styled.TouchableOpacity`
+    width: 100%;
+    height: 56px;
+    background-color: #E51C44;
+    border-radius: 8px;
+    flex-direction: row;
+    align-items: center;
+`
+
+const IconWrapper = styled.View`
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    border-right-width: 1px;
+    border-color: #991F36;
+`
+
+const Title = styled.Text`
+    flex: 1;
+    color: #DDE3F0;
+    font-size: 15px;
+    text-align: center;
+`
+
+const Icon = styled.Image`
+    width: 24px;
+    height: 18px;
+`
 
 type Props = TouchableOpacityProps & {
     title: string;
@@ -17,18 +41,15 @@ type Props = TouchableOpacityProps & {
 
 const ButtonIcon = ({ title, ...rest } : Props) => {
     return (
-        <TouchableOpacity 
-            style= { styles.container } 
-            {...rest}
-        >
-            <View style= { styles.iconWrapper }>
-                <Image source= { DiscordImg } style= { styles.icon } />
-            </View>
+        <TouchableOpacityContainer {...rest} >
+            <IconWrapper>
+                <Icon source= { DiscordImg } />
+            </IconWrapper>
 
-            <Text style= { styles.title}>
+            <Title>
                 { title }
-            </Text>
-        </TouchableOpacity>
+            </Title>
+        </TouchableOpacityContainer>
     )
 }
 
