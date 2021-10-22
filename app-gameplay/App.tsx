@@ -6,6 +6,6 @@ const App = () => {
     return (
       <SignIn />
     )
-  }
+}
 
 export default App;

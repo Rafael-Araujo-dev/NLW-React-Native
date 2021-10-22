@@ -1,52 +1,66 @@
 import React from 'react'
-import { 
-            View, 
-            Text, 
-            Image,
-            StatusBar,
-            Button
-        } from 'react-native'
-import { string } from 'yargs'
+import { StatusBar } from 'react-native'
+
+import styled from 'styled-components/native'
 
 import IllustrationImg from '../../assets/illustration.png'
 
 import ButtonIcon from  '../../components/ButtonIcon'
 
-import  styles  from './styles'
+const Container = styled.View`
+    flex: 1;
+    background-color: #0D133D;
+    justify-content: center;
+    align-items: center;
+`
+
+const Content = styled.View`
+    margin-top: -40px;
+    padding: 0 50px;
+`
+
+const Title = styled.Text`
+    color: #DDE3F0;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 16px;
+`
+
+const SubTitle = styled.Text`
+        color: #DDE3F0;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 64px;
+`
+
+const Image = styled.Image`
+    width: 100%;
+    height: 360px;
+`
 
 const SignIn = () => {
 
     return (
-        <View style= { styles.container }>
+        <Container>
             <StatusBar 
                 barStyle= "light-content"
                 backgroundColor= "transparent"
                 translucent= { true }
             />
-            <Image 
-            source= { IllustrationImg } 
-            style= { styles.image }
-            resizeMode= "stretch"
-            />
-
-            <View style= { styles.content }>
-                <Text style= { styles.title }>
+            <Image source= { IllustrationImg } resizeMode= "stretch"/>
+            <Content>
+                <Title>
                     Organize {`\n`}
                     suas jogatinas {`\n`}
                     facilmente
-                </Text>
-
-                <Text style= { styles.subtitle }>
+                </Title>
+                <SubTitle>
                     Crie grupos para jogar seus games {`\n`}
                     favoritos com seus amigos
-                </Text>
-
-                <ButtonIcon 
-                    title= 'Entrar com Discord'
-                    activeOpacity= {.7}    
-                />
-            </View>
-        </View>
+                </SubTitle>
+                <ButtonIcon title= 'Entrar com Discord' activeOpacity= {.7} />
+            </Content>
+        </Container>
     )
 }
 
