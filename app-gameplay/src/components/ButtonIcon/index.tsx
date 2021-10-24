@@ -5,7 +5,7 @@ import DiscordImg from '../../assets/discord.png'
 
 import styled from 'styled-components/native'
 
-import theme from '../../global/styles/theme';
+import theme from '../../global/styles/theme'
 
 const TouchableOpacityContainer = styled.TouchableOpacity`
     width: 100%;

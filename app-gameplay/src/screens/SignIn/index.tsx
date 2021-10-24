@@ -4,13 +4,12 @@ import styled from 'styled-components/native'
 
 import IllustrationImg from '../../assets/illustration.png'
 
-import theme from '../../global/styles/theme';
+import theme from '../../global/styles/theme'
 
 import ButtonIcon from  '../../components/ButtonIcon'
 
 const Container = styled.View`
     flex: 1;
-    background-color: ${theme.colors.secondary100};
     justify-content: center;
     align-items: center;
 `
