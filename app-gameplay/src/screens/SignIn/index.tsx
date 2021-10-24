@@ -5,11 +5,13 @@ import styled from 'styled-components/native'
 
 import IllustrationImg from '../../assets/illustration.png'
 
+import theme from '../../global/styles/theme';
+
 import ButtonIcon from  '../../components/ButtonIcon'
 
 const Container = styled.View`
     flex: 1;
-    background-color: #0D133D;
+    background-color: ${theme.colors.secondary100};
     justify-content: center;
     align-items: center;
 `
@@ -20,17 +22,21 @@ const Content = styled.View`
 `
 
 const Title = styled.Text`
-    color: #DDE3F0;
+    color: ${theme.colors.heading};
     text-align: center;
     font-size: 40px;
     margin-bottom: 16px;
+    font-family: ${theme.fonts.title700};
+    line-height: 40px;
 `
 
 const SubTitle = styled.Text`
-    color: #DDE3F0;
+    color: ${theme.colors.heading};
     font-size: 15px;
     text-align: center;
     margin-bottom: 64px;
+    font-family: ${theme.fonts.title500};
+    line-height: 25px;
 `
 
 const Image = styled.Image`
