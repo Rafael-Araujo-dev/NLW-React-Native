@@ -1,5 +1,4 @@
 import React from 'react'
-import { StatusBar } from 'react-native'
 
 import styled from 'styled-components/native'
 
@@ -48,11 +47,6 @@ const SignIn = () => {
 
     return (
         <Container>
-            <StatusBar 
-                barStyle= "light-content"
-                backgroundColor= "transparent"
-                translucent= { true }
-            />
             <Image source= { IllustrationImg } resizeMode= "stretch"/>
             <Content>
                 <Title>
