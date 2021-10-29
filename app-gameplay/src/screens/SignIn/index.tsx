@@ -1,4 +1,8 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
+import { LinearGradient } from 'expo-linear-gradient'
 
 import styled from 'styled-components/native'
 
@@ -42,24 +46,46 @@ const Image = styled.Image`
     height: 360px;
 `
 
-const SignIn = () => {
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
+});
+
+const { secondary80, secondary100 } = theme.colors;
+
+const SignIn = ({}) => {
+
+    const navigation = useNavigation();
+
+    const handleSignIn = () => {
+        navigation.navigate('Home')
+    }
 
     return (
-        <Container>
-            <Image source= { IllustrationImg } resizeMode= "stretch"/>
-            <Content>
-                <Title>
-                    Organize {`\n`}
-                    suas jogatinas {`\n`}
-                    facilmente
-                </Title>
-                <SubTitle>
-                    Crie grupos para jogar seus games {`\n`}
-                    favoritos com seus amigos
-                </SubTitle>
-                <ButtonIcon title= 'Entrar com Discord' activeOpacity= {.7} />
-            </Content>
-        </Container>
+        <LinearGradient
+            style= { styles.container }
+            colors= { [secondary80, secondary100] }
+        >
+            <Container>
+                <Image source= { IllustrationImg } resizeMode= "stretch"/>
+                <Content>
+                    <Title>
+                        Organize {`\n`}
+                        suas jogatinas {`\n`}
+                        facilmente
+                    </Title>
+                    <SubTitle>
+                        Crie grupos para jogar seus games {`\n`}
+                        favoritos com seus amigos
+                    </SubTitle>
+                    <ButtonIcon 
+                        title= 'Entrar com Discord' 
+                        onPress= {handleSignIn}
+                        />
+                </Content>
+            </Container>
+        </LinearGradient>
     )
 }
 

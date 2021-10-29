@@ -1,5 +1,7 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
 
+import { LinearGradient } from 'expo-linear-gradient'
 //import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 import styled from 'styled-components/native'
@@ -21,13 +23,26 @@ const Header = styled.View`
     margin-bottom: 42px;
 `
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
+});
+
+const { secondary80, secondary100 } = theme.colors;
+
 const Home = () => {
     return (
-        <Container>
-            <Header>
-                <Profile />
-            </Header>
-        </Container>
+        <LinearGradient
+            style= { styles.container }
+            colors= { [secondary80, secondary100] }
+        >
+            <Container>
+                <Header>
+                    <Profile />
+                </Header>
+            </Container>
+        </LinearGradient>
     )
 }
 

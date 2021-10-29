@@ -38,7 +38,6 @@ const Message = styled.Text`
     color: ${theme.colors.highlight};
 `
 
-
 const Profile = () => {
     return (
         <Container>
