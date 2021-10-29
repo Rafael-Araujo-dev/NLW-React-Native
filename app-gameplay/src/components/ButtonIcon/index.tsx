@@ -1,34 +1,60 @@
 import React from 'react'
-import { 
-    View, 
-    Text, 
-    Image,
-    TouchableOpacity,
-    TouchableOpacityProps
-} from 'react-native'
+import { StyleSheet } from 'react-native'
+
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler'
 
 import DiscordImg from '../../assets/discord.png'
 
-import styles from './styles'
+import styled from 'styled-components/native'
 
-type Props = TouchableOpacityProps & {
+import theme from '../../global/styles/theme'
+
+const IconWrapper = styled.View`
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    border-right-width: 1px;
+    border-color: ${theme.colors.line};
+`
+
+const Title = styled.Text`
+    flex: 1;
+    color: ${theme.colors.heading};
+    font-size: 15px;
+    text-align: center;
+`
+
+const Icon = styled.Image`
+    width: 24px;
+    height: 18px;
+`
+
+const styles = StyleSheet.create({
+    container: {
+        width: '100%',
+        height: 56,
+        backgroundColor: theme.colors.primary,
+        borderRadius: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+    }
+});
+
+type Props = RectButtonProps & {
     title: string;
 }
 
 const ButtonIcon = ({ title, ...rest } : Props) => {
     return (
-        <TouchableOpacity 
-            style= { styles.container } 
-            {...rest}
-        >
-            <View style= { styles.iconWrapper }>
-                <Image source= { DiscordImg } style= { styles.icon } />
-            </View>
-
-            <Text style= { styles.title}>
+        <RectButton {...rest} style={styles.container}>
+            <IconWrapper>
+                <Icon source= { DiscordImg } />
+            </IconWrapper>
+            <Title>
                 { title }
-            </Text>
-        </TouchableOpacity>
+            </Title>
+        </RectButton>
     )
 }
 
