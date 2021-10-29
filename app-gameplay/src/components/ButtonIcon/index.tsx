@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = RectButtonProps & {
-    title: string;
+    title: string
 }
 
 const ButtonIcon = ({ title, ...rest } : Props) => {

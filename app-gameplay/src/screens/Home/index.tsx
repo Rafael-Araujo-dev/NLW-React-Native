@@ -9,6 +9,7 @@ import styled from 'styled-components/native'
 import theme from '../../global/styles/theme'
 
 import Profile from '../../components/Profile'
+import ButtonAdd from '../../components/ButtonAdd'
 
 const Container = styled.View`
     flex: 1;
@@ -40,6 +41,7 @@ const Home = () => {
             <Container>
                 <Header>
                     <Profile />
+                    <ButtonAdd />
                 </Header>
             </Container>
         </LinearGradient>
