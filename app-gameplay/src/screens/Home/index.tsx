@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 
 import { LinearGradient } from 'expo-linear-gradient'
@@ -10,6 +10,7 @@ import theme from '../../global/styles/theme'
 
 import Profile from '../../components/Profile'
 import ButtonAdd from '../../components/ButtonAdd'
+import CategorySelector from '../../components/CategorySelector'
 
 const Container = styled.View`
     flex: 1;
@@ -33,6 +34,12 @@ const styles = StyleSheet.create({
 const { secondary80, secondary100 } = theme.colors;
 
 const Home = () => {
+    const [category, setCategory] = useState('');
+
+    let handleSelectedCategory = (categoryId: string) => {
+        categoryId === category ? setCategory('') : setCategory(categoryId)
+    }
+
     return (
         <LinearGradient
             style= { styles.container }
@@ -43,6 +50,12 @@ const Home = () => {
                     <Profile />
                     <ButtonAdd />
                 </Header>
+                <>
+                    <CategorySelector 
+                        categorySelected={category}
+                        setCategory= { handleSelectedCategory }
+                    />
+                </>
             </Container>
         </LinearGradient>
     )
